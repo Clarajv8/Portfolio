@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clara Jiménez Vallés | Portfolio</title>
+    <title>Clara Jiménez | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="noise-overlay"></div>
+
+    <div class="ambient-background">
+        <div class="color-zone zone-cyan"></div>
+        <div class="color-zone zone-magenta"></div>
+    </div>
 
     <div id="portfolio-container">
         
         <main class="content-area" id="content-display">
             
-            <!-- Bloque: Quién soy -->
             <div id="about-content" class="content-block">
-                <div class="about-layout">
-                    
-                    <div class="about-info">
-                        <h2>Clara Jiménez</h2>
-                        <p class="about-paragraph">
-                            Soy diseñadora gráfica y, sobre todo, una persona curiosa. No concibo el diseño como una capa de maquillaje, sino como la estructura que hace que una idea funcione, se entienda y, además, guste.
-                        </p>
-                        <p class="about-paragraph">
-                            Me muevo con soltura entre el diseño de interfaces, el motion graphics y el 3D, y disfruto metiéndome en los procesos técnicos hasta que todo encaja. No me da miedo lo complejo: me apasiona resolver problemas visuales con soluciones limpias, funcionales y con intención.
-                        </p>
-                        <p class="about-paragraph">
-                            Aprendo rápido, me obsesiona la tecnología y creo que el mejor diseño es el que no se nota, pero se echa de menos cuando no está.
-                        </p>
+                <div class="about-grid">
+
+                    <aside class="about-sidebar">
+                        
+                        <div class="image-frame">
+                            <img src="assets/clara-foto.webp" alt="Clara Foto" class="profile-photo">
+                        </div>
 
                         <div class="interactive-skills">
                             <div class="skill-bubble">
@@ -44,58 +41,117 @@
                                 <span class="skill-details">After Effects, Premiere, Blender, C4D</span>
                             </div>
                         </div>
-                    </div>
+                    </aside>
 
-                    <div class="about-profile-image">
-                        <div class="image-hover-wrapper">
-                            <img src="assets/clara-dibujo.png" alt="Clara Ilustración" class="img-base">
-                            <img src="assets/clara-foto.webp" alt="Clara Foto" class="img-hover">
-                        </div>
-                    </div>
+                    <article class="about-text-content">
+                        <h2>Clara Jiménez</h2>
+                        <p class="about-paragraph">
+                            Soy diseñadora gráfica y, sobre todo, una persona curiosa. No concibo el diseño como una capa de maquillaje, sino como la estructura que hace que una idea funcione, se entienda y, además, guste.
+                        </p>
+                        <p class="about-paragraph">
+                            Me muevo con soltura entre el diseño de interfaces, el motion graphics y el 3D, y disfruto metiéndome en los procesos técnicos hasta que todo encaja. No me da miedo lo complejo: me apasiona resolver problemas visuales con soluciones limpias, funcionales y con intención.
+                        </p>
+                        <p class="about-paragraph highlight-text">
+                            Aprendo rápido, me obsesiona la tecnología y creo que el mejor diseño es el que no se nota, pero se echa de menos cuando no está.
+                        </p>
+                    </article>
 
                 </div>
             </div>
 
             <div id="works-content" class="content-block">
                 <h2>Proyectos destacados</h2>
+                
                 <div class="projects-grid">
-                    <!-- Casilla 1 -->
-                    <div class="project-card">
-                        <div class="project-image-placeholder vertical-img">IMG Tarantino</div>
+                    <div class="project-card" onclick="toggleProjectDetail('tarantino')">
+                        <div class="project-image-placeholder vertical-img">
+                            <img src="assets/tarantino.jpg" alt="Tarantino Expo" class="card-img">
+                        </div>
                         <h3>Tarantino Expo</h3>
                         <p>UX/UI & App Design</p>
                     </div>
-                    <!-- Casilla 2 -->
-                    <div class="project-card">
-                        <div class="project-image-placeholder vertical-img">IMG Bakeneko Bakery</div>
+                    
+                    <div class="project-card" onclick="toggleProjectDetail('bakeneko')">
+                        <div class="project-image-placeholder vertical-img">
+                            <img src="assets/bakeneko.jpg" alt="Bakeneko Bakery" class="card-img">
+                        </div>
                         <h3>Bakeneko Bakery</h3>
                         <p>Web Development</p>
                     </div>
-                    <!-- Casilla 3 -->
-                    <div class="project-card">
-                        <div class="project-image-placeholder vertical-img">IMG Libro</div>
+                    
+                    <div class="project-card" onclick="toggleProjectDetail('libro')">
+                        <div class="project-image-placeholder vertical-img">
+                            <img src="assets/libro.jpg" alt="Natural Sciences" class="card-img">
+                        </div>
                         <h3>Natural Sciences</h3>
                         <p>Editorial Design</p>
                     </div>
+                </div>
+
+                <div id="project-details-container" class="project-details-wrapper">
+                    
+                    <div id="detail-tarantino" class="project-case-study">
+                        <div class="case-header">
+                            <h3>Tarantino Expo: Experiencia Digital</h3>
+                            <span class="case-tags">UX Research • Wireframing • UI Design • Prototyping</span>
+                        </div>
+                        <div class="case-body">
+                            <p><strong>El Reto:</strong> Diseñar la interfaz para las tabletas interactivas y la app móvil de una exposición inmersiva sobre Quentin Tarantino, logrando que la navegación fuera tan cinematográfica como accesible para todo tipo de público.</p>
+                            <p><strong>El Proceso:</strong> Partiendo de una profunda investigación de usuario y arquitectura de la información, desarrollé wireframes de baja fidelidad para testear flujos. Posteriormente, apliqué un sistema de diseño visual (UI) coherente con la identidad de la exposición, culminando en un prototipo interactivo de alta fidelidad.</p>
+                            <div class="process-image-placeholder">
+                                <img src="assets/tarantino-process.jpg" alt="Proceso UX/UI Tarantino">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="detail-bakeneko" class="project-case-study">
+                        <div class="case-header">
+                            <h3>Bakeneko Bakery: Desarrollo Web Front-end</h3>
+                            <span class="case-tags">HTML5 • CSS3 • JavaScript • Responsive Design</span>
+                        </div>
+                        <div class="case-body">
+                            <p><strong>El Proyecto:</strong> Programación íntegra desde cero de una plataforma web...</p>
+                        </div>
+                    </div>
+
+                    <div id="detail-libro" class="project-case-study">
+                        <div class="case-header">
+                            <h3>Natural Sciences: Maquetación Editorial</h3>
+                            <span class="case-tags">InDesign • Tipografía • Retículas (Grids) • Jerarquía Visual</span>
+                        </div>
+                        <div class="case-body">
+                            <p><strong>El Proyecto:</strong> Diseño editorial completo para un libro de ciencias de primaria...</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
             <div id="contact-content" class="content-block">
                 <h2>Hablemos.</h2>
-                <p>Actualmente abierta a nuevas oportunidades profesionales y lista para aportar valor desde el primer día.</p>
+                <p>Actualmente abierta a conversaciones profesionales interesantes. Si tienes un proyecto en mente, me encantaría conocerlo.</p>
                 
                 <div class="contact-links">
                     <a href="mailto:claraj1653@gmail.com" class="contact-item">
-                        <span class="label">Email</span>
+                        <span class="label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            Email
+                        </span>
                         <span class="value">claraj1653@gmail.com</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/clara-jv" target="_blank" class="contact-item">
-                        <span class="label">LinkedIn</span>
+                    <a href="https://linkedin.com/in/clara-jv" target="_blank" class="contact-item">
+                        <span class="label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            LinkedIn
+                        </span>
                         <span class="value">Clara Jiménez</span>
                     </a>
-                    <a href="media/CV_Clara_Jimenez.pdf" download class="contact-item">
-                        <span class="label">Currículum</span>
-                        <span class="value">Descargar PDF</span>
+                    <a href="assets/CV_Clara_Jimenez.pdf" download class="contact-item">
+                        <span class="label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Currículum
+                        </span>
+                        <span class="value">Descargar CV</span>
                     </a>
                 </div>
             </div>
