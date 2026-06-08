@@ -60,67 +60,95 @@
             </div>
 
             <div id="works-content" class="content-block">
-                <h2>Proyectos destacados</h2>
                 
-                <div class="projects-grid">
-                    <div class="project-card" onclick="toggleProjectDetail('tarantino')">
-                        <div class="project-image-placeholder vertical-img">
-                            <img src="assets/tarantino.jpg" alt="Tarantino Expo" class="card-img">
+                <div class="projects-overview">
+                    <h2>Proyectos destacados</h2>
+                    <div class="projects-grid">
+                        <div class="project-card" onclick="toggleProjectDetail('tarantino')">
+                            <div class="project-image-placeholder vertical-img">
+                                <img src="assets/tarantino.jpg" alt="Tarantino Expo" class="card-img">
+                            </div>
+                            <h3>Tarantino Expo</h3>
+                            <p>UX/UI & App Design</p>
                         </div>
-                        <h3>Tarantino Expo</h3>
-                        <p>UX/UI & App Design</p>
-                    </div>
-                    
-                    <div class="project-card" onclick="toggleProjectDetail('bakeneko')">
-                        <div class="project-image-placeholder vertical-img">
-                            <img src="assets/bakeneko.jpg" alt="Bakeneko Bakery" class="card-img">
+                        
+                        <div class="project-card" onclick="toggleProjectDetail('bakeneko')">
+                            <div class="project-image-placeholder vertical-img">
+                                <img src="assets/bakeneko.jpg" alt="Bakeneko Bakery" class="card-img">
+                            </div>
+                            <h3>Bakeneko Bakery</h3>
+                            <p>Web Development</p>
                         </div>
-                        <h3>Bakeneko Bakery</h3>
-                        <p>Web Development</p>
-                    </div>
-                    
-                    <div class="project-card" onclick="toggleProjectDetail('libro')">
-                        <div class="project-image-placeholder vertical-img">
-                            <img src="assets/libro.jpg" alt="Natural Sciences" class="card-img">
+                        
+                        <div class="project-card" onclick="toggleProjectDetail('libro')">
+                            <div class="project-image-placeholder vertical-img">
+                                <img src="assets/libro.jpg" alt="Natural Sciences" class="card-img">
+                            </div>
+                            <h3>Natural Sciences</h3>
+                            <p>Editorial Design</p>
                         </div>
-                        <h3>Natural Sciences</h3>
-                        <p>Editorial Design</p>
                     </div>
                 </div>
 
                 <div id="project-details-container" class="project-details-wrapper">
                     
                     <div id="detail-tarantino" class="project-case-study">
-                        <div class="case-header">
-                            <h3>Tarantino Expo: Experiencia Digital</h3>
-                            <span class="case-tags">UX Research • Wireframing • UI Design • Prototyping</span>
+                        <div class="case-sidebar">
+                            <div class="project-image-placeholder vertical-img case-main-img">
+                                <img src="assets/tarantino.jpg" alt="Tarantino Expo" class="card-img">
+                            </div>
                         </div>
-                        <div class="case-body">
-                            <p><strong>El Reto:</strong> Diseñar la interfaz para las tabletas interactivas y la app móvil de una exposición inmersiva sobre Quentin Tarantino, logrando que la navegación fuera tan cinematográfica como accesible para todo tipo de público.</p>
-                            <p><strong>El Proceso:</strong> Partiendo de una profunda investigación de usuario y arquitectura de la información, desarrollé wireframes de baja fidelidad para testear flujos. Posteriormente, apliqué un sistema de diseño visual (UI) coherente con la identidad de la exposición, culminando en un prototipo interactivo de alta fidelidad.</p>
-                            <div class="process-image-placeholder">
-                                <img src="assets/tarantino-process.jpg" alt="Proceso UX/UI Tarantino">
+                        <div class="case-content">
+                            <button class="back-btn" onclick="closeCaseStudy()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                Volver a Proyectos
+                            </button>
+                            <h3>Tarantino Expo: Experiencia Digital</h3>
+                            <span class="case-tags">UX Research • Wireframing • UI Design</span>
+                            <div class="case-body">
+                                <p><strong>El Reto:</strong> Diseñar la interfaz para las tabletas interactivas y la app móvil de una exposición inmersiva sobre Quentin Tarantino.</p>
+                                <div class="process-image-placeholder">
+                                    <img src="assets/tarantino-process.jpg" alt="Proceso UX/UI">
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div id="detail-bakeneko" class="project-case-study">
-                        <div class="case-header">
-                            <h3>Bakeneko Bakery: Desarrollo Web Front-end</h3>
-                            <span class="case-tags">HTML5 • CSS3 • JavaScript • Responsive Design</span>
+                        <div class="case-sidebar">
+                            <div class="project-image-placeholder vertical-img case-main-img">
+                                <img src="assets/bakeneko.jpg" alt="Bakeneko Bakery" class="card-img">
+                            </div>
                         </div>
-                        <div class="case-body">
-                            <p><strong>El Proyecto:</strong> Programación íntegra desde cero de una plataforma web...</p>
+                        <div class="case-content">
+                            <button class="back-btn" onclick="closeCaseStudy()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                Volver a Proyectos
+                            </button>
+                            <h3>Bakeneko Bakery: Dev</h3>
+                            <span class="case-tags">HTML5 • CSS3 • JavaScript</span>
+                            <div class="case-body">
+                                <p><strong>El Reto:</strong> Desarrollo front-end para una pastelería japonesa.</p>
+                            </div>
                         </div>
                     </div>
 
                     <div id="detail-libro" class="project-case-study">
-                        <div class="case-header">
-                            <h3>Natural Sciences: Maquetación Editorial</h3>
-                            <span class="case-tags">InDesign • Tipografía • Retículas (Grids) • Jerarquía Visual</span>
+                        <div class="case-sidebar">
+                            <div class="project-image-placeholder vertical-img case-main-img">
+                                <img src="assets/libro.jpg" alt="Natural Sciences" class="card-img">
+                            </div>
                         </div>
-                        <div class="case-body">
-                            <p><strong>El Proyecto:</strong> Diseño editorial completo para un libro de ciencias de primaria...</p>
+                        <div class="case-content">
+                            <button class="back-btn" onclick="closeCaseStudy()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                Volver a Proyectos
+                            </button>
+                            <h3>Natural Sciences: Maquetación</h3>
+                            <span class="case-tags">InDesign • Tipografía • Retículas</span>
+                            <div class="case-body">
+                                <p><strong>El Reto:</strong> Diseño editorial para un libro de ciencias.</p>
+                            </div>
                         </div>
                     </div>
 

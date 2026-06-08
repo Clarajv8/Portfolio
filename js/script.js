@@ -1,47 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // === LÓGICA DE NAVEGACIÓN ===
     window.toggleSection = function(sectionId, clickedElement) {
         const container = document.getElementById('portfolio-container');
         const targetBlock = document.getElementById(sectionId + '-content');
         
+        if (sectionId === 'works' && container.classList.contains('case-study-active')) {
+            window.closeCaseStudy();
+            return;
+        }
+
+        container.classList.remove('case-study-active');
+
         const isAlreadyActive = targetBlock.classList.contains('active');
 
-        document.querySelectorAll('.content-block').forEach(block => {
-            block.classList.remove('active');
-        });
-        document.querySelectorAll('.soft-glitch-link').forEach(btn => {
-            btn.classList.remove('active-btn');
-        });
+        document.querySelectorAll('.content-block').forEach(block => block.classList.remove('active'));
+        document.querySelectorAll('.soft-glitch-link').forEach(btn => btn.classList.remove('active-btn'));
 
         if (isAlreadyActive) {
             container.classList.remove('layout-split');
         } else {
             container.classList.add('layout-split');
             clickedElement.classList.add('active-btn');
-            setTimeout(() => {
-                targetBlock.classList.add('active');
-            }, 50); 
+            setTimeout(() => { targetBlock.classList.add('active'); }, 50); 
         }
     };
 
-    // === LÓGICA DEL PANEL DESPLEGABLE DE PROYECTOS ===
-    let currentActiveProject = null;
-
+    // === LÓGICA DE PROYECTOS (CASE STUDY) ===
     window.toggleProjectDetail = function(projectId) {
-        const wrapper = document.getElementById('project-details-container');
+        const container = document.getElementById('portfolio-container');
         const allCases = document.querySelectorAll('.project-case-study');
         
-        if (currentActiveProject === projectId) {
-            wrapper.classList.remove('open');
-            currentActiveProject = null;
-            
-            setTimeout(() => {
-                allCases.forEach(c => c.classList.remove('active-case'));
-            }, 600);
-            return;
-        }
-
         allCases.forEach(c => c.classList.remove('active-case'));
         
         const targetCase = document.getElementById('detail-' + projectId);
@@ -49,8 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
             targetCase.classList.add('active-case');
         }
 
-        wrapper.classList.add('open');
-        currentActiveProject = projectId;
+        container.classList.add('case-study-active');
+    };
+
+    window.closeCaseStudy = function() {
+        const container = document.getElementById('portfolio-container');
+        
+        container.classList.remove('case-study-active');
+        
+        setTimeout(() => {
+            document.querySelectorAll('.project-case-study').forEach(c => c.classList.remove('active-case'));
+        }, 600);
     };
 
 

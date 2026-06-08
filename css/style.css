@@ -301,16 +301,7 @@ body {
 }
 
 /* === PANEL DESPLEGABLE DE PROYECTOS === */
-.project-details-wrapper {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    margin-top: 0;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.4, 1);
-    background-color: #FAFAFA;
-    border-radius: 16px;
-    border: 1px solid transparent;
-}
+
 
 .project-details-wrapper.open {
     max-height: 50vh;
@@ -479,4 +470,115 @@ body {
     color: #2D2D2D;
     transform: scale(1.1);
     filter: drop-shadow(2px 0px 2px rgba(255, 0, 128, 0.3)) drop-shadow(-2px 0px 2px rgba(0, 255, 255, 0.3));
+}
+
+/* === PROYECTOS: CROSS-FADE SIN SALTOS === */
+#works-content {
+    display: grid; 
+    width: 100%;
+    align-items: start;
+}
+
+.projects-overview, .project-details-wrapper {
+    grid-area: 1 / 1; 
+    width: 100%;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.4, 1);
+}
+
+.projects-overview {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.project-details-wrapper {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    z-index: 1; 
+}
+
+/* 2. Estado Activo (Al pulsar un proyecto) */
+#portfolio-container.case-study-active .projects-overview {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    z-index: 1;
+}
+
+#portfolio-container.case-study-active .project-details-wrapper {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    z-index: 2; 
+}
+
+/* === PANEL DE DETALLE: LAYOUT DE 2 COLUMNAS === */
+.project-case-study {
+    display: none; 
+}
+
+.project-case-study.active-case {
+    display: grid;
+    grid-template-columns: 240px 1fr; 
+    gap: 4rem;
+    align-items: start;
+    width: 100%;
+}
+
+.case-sidebar {
+    width: 100%;
+}
+
+.case-main-img {
+    margin-bottom: 0;
+    box-shadow: -4px 6px 15px rgba(0, 255, 255, 0.08), 4px 6px 15px rgba(255, 0, 128, 0.08);
+}
+
+.case-content {
+    max-height: 65vh; 
+    overflow-y: auto; 
+    padding-right: 1.5rem;
+    padding-top: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #EAEAEA transparent;
+}
+
+.case-content h3 { font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
+.case-tags { font-size: 0.8rem; color: #A3A3A3; display: block; margin-bottom: 2rem; }
+.case-body p { font-size: 1rem; line-height: 1.7; color: #555; margin-bottom: 1.2rem; }
+
+/* === EL MENÚ VIAJA ARRIBA === */
+#portfolio-container.case-study-active .main-menu {
+    left: 50%; top: 5vh; transform: translateX(-50%);
+    flex-direction: row; gap: 3rem; align-items: center;
+}
+#portfolio-container.case-study-active .soft-glitch-link { font-size: 1.2rem; letter-spacing: 0px; }
+
+#portfolio-container.case-study-active .content-area {
+    left: 12%; width: 70%;
+}
+
+/* === BOTÓN DE VOLVER === */
+.back-btn {
+    background: transparent;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #A3A3A3;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-btn:hover { 
+    color: #2D2D2D; 
+    transform: translateX(-5px);
 }
