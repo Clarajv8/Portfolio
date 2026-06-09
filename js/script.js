@@ -43,10 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 if (targetCase) {
                     targetCase.classList.add('active-case');
-                    const scrollArea = targetCase.querySelector('.case-content');
-                    if (scrollArea) scrollArea.scrollTop = 0;
+                    targetCase.scrollTop = 0;
                 }
-            }, 400); 
+            }, 400);
 
         } else {
             allCases.forEach(c => c.classList.remove('active-case'));
@@ -67,15 +66,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // === FÍSICA DEL FONDO ===
-    
+
     document.addEventListener('mousemove', (e) => {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
 
         document.querySelectorAll('.color-zone').forEach(zone => {
-            const rect = zone.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
+            let centerX, centerY;
+
+            // Damos el centro matemático por pantalla, evitamos el "getBoundingClientRect" que colapsaba la gráfica
+            if (zone.classList.contains('zone-cyan')) {
+                centerX = window.innerWidth * 0.25;
+                centerY = window.innerHeight * 0.25;
+            } else {
+                centerX = window.innerWidth * 0.75;
+                centerY = window.innerHeight * 0.75;
+            }
 
             const distX = centerX - mouseX;
             const distY = centerY - mouseY;
@@ -113,5 +119,23 @@ document.addEventListener('DOMContentLoaded', () => {
             split.remove();
         }, 2500);
     });
+
+    // === LÓGICA DE LA VENTANA EMERGENTE (LIGHTBOX GLOBAL) ===
+    window.openLightbox = function(imageSrc) {
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+        }
+    };
+
+    window.closeLightbox = function() {
+        const lightbox = document.getElementById('image-lightbox');
+        if (lightbox) {
+            lightbox.classList.remove('active');
+        }
+    };
 
 });

@@ -12,7 +12,7 @@ body {
     color: #2D2D2D;
 }
 
-/* === FONDO ANIMADO (ZONAS DE COLOR) === */
+/* === FONDO ANIMADO === */
 .ambient-background {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
@@ -51,7 +51,7 @@ body {
     100% { transform: scale(1.2) translate(-5vw, -5vh); }
 }
 
-/* === EL EFECTO: ONDA DE AGUA SÚPER DIFUMINADA === */
+/* === EL EFECTO === */
 .water-split {
     position: fixed;
     border-radius: 50%;
@@ -107,7 +107,7 @@ body {
 }
 
 
-/* === ÁREA DE CONTENIDO (GRID CENTRAL) === */
+/* === ÁREA DE CONTENIDO === */
 .content-area {
     position: absolute;
     left: 10%; top: 50%;
@@ -153,7 +153,7 @@ body {
 }
 
 
-/* === MAQUETACIÓN EDITORIAL (QUIÉN SOY) === */
+/* === MAQUETACIÓN EDITORIAL === */
 .about-grid {
     display: grid;
     grid-template-columns: 240px 1fr; 
@@ -454,7 +454,6 @@ body {
 .projects-overview, .project-details-wrapper {
     grid-area: 1 / 1; 
     width: 100%;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.4, 1);
 }
 
 .projects-overview {
@@ -488,7 +487,7 @@ body {
     transition: opacity 0.4s ease 0.3s, transform 0.6s cubic-bezier(0.25, 1, 0.4, 1) 0.3s, visibility 0s 0s; 
 }
 
-/* === PANEL DE DETALLE Y COLUMNAS (AHORA CON CROSS-FADE) === */
+/* === PANEL DE DETALLE Y COLUMNAS === */
 .project-details-wrapper {
     width: 100%;
     position: absolute; 
@@ -517,7 +516,7 @@ body {
 
 .intro-text { font-size: 1.05rem; line-height: 1.7; color: #4A4A4A; margin-bottom: 3rem; }
 
-/* === LAYOUT EN ZIG-ZAG (LO NUEVO) === */
+/* === LAYOUT EN ZIG-ZAG === */
 .zig-zag-row {
     display: flex;
     align-items: center;
@@ -656,11 +655,13 @@ body {
 /* === PROYECTOS: TRANSICIÓN FLUIDA Y CORRECTA === */
 .project-case-study {
     grid-area: 1 / 1; 
-    display: grid;
-    grid-template-columns: 240px 1fr; 
-    gap: 4rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
     width: 100%;
+    max-width: 1100px;
+    margin: 0 auto; 
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -681,6 +682,58 @@ body {
     transform: translateY(0);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0s;
     z-index: 2;
+}
+
+/* === NUEVAS CLASES PARA EL COMPORTAMIENTO CENTRAL INTEGRADO === */
+.case-header-block {
+    width: 100%;
+    border-bottom: 1px solid #EAEAEA;
+    padding-bottom: 1.5rem;
+}
+
+.case-header-block h3 {
+    font-size: 2.8rem;
+    color: #2D2D2D;
+    letter-spacing: -1.5px;
+    margin-bottom: 0.5rem;
+}
+
+.case-header-block .case-tags {
+    font-size: 0.85rem;
+    color: #A3A3A3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.case-intro-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.case-intro-row .case-main-img {
+    flex: 1;
+    max-width: 260px; 
+    margin-bottom: 0; 
+}
+
+.case-intro-text {
+    flex: 2;
+}
+
+.case-intro-text .intro-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #4A4A4A;
+    margin-bottom: 0;
+}
+
+.case-body {
+    width: 100%;
+    margin-top: 2rem;
 }
 
 /* === VISOR INTERACTIVO PANORÁMICO (IFRAME) === */
@@ -793,4 +846,98 @@ body {
 
 .iframe-window.mobile-frame iframe {
     border-radius: 28px;
+}
+
+/* === GALERÍAS INTERACTIVAS === */
+.interactive-gallery {
+   flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+    width: 100%;
+    max-width: 480px; 
+    margin: 0 auto;
+}
+
+.gallery-main {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #EFEFEF;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.gallery-main img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.gallery-stack {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem; 
+    width: 100%;
+}
+
+.stacked-card {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #FDFDFB; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    cursor: zoom-in; 
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.4, 1), box-shadow 0.3s ease;
+}
+
+.stacked-card:nth-child(1) { transform: rotate(-4deg); }
+.stacked-card:nth-child(2) { transform: rotate(2deg); }
+.stacked-card:nth-child(3) { transform: rotate(-2deg); }
+.stacked-card:nth-child(4) { transform: rotate(4deg); }
+
+.stacked-card:hover {
+    transform: translateY(-12px) scale(1.25) rotate(0deg) !important;
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* === LIGHTBOX MODAL (VENTANA EMERGENTE) === */
+.lightbox-modal {
+    position: fixed;
+    top: 0; left: 0; 
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(5px); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+    
+    cursor: zoom-out; 
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible; 
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.lightbox-modal img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-modal.active img {
+    transform: scale(1);
 }
