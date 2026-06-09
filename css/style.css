@@ -766,3 +766,31 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+
+/* === MODIFICADOR PARA PROTOTIPOS MÓVILES (ELYSIUM) === */
+.iframe-window.mobile-frame {
+    max-width: 360px; 
+    aspect-ratio: 9 / 19; 
+    border-radius: 36px; 
+    border: 8px solid #2D2D2D; 
+    background-color: #000; 
+    position: relative;
+    padding-top: 0;
+}
+
+.mobile-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 24px;
+    background-color: #2D2D2D;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 10;
+}
+
+.iframe-window.mobile-frame iframe {
+    border-radius: 28px;
+}

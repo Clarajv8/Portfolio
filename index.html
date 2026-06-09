@@ -64,12 +64,13 @@
                 <div class="projects-overview">
                     <h2>Proyectos destacados</h2>
                     <div class="projects-grid">
-                        <div class="project-card" onclick="toggleProjectDetail('tarantino')">
+                        
+                        <div class="project-card" onclick="toggleProjectDetail('elysium')">
                             <div class="project-image-placeholder vertical-img">
-                                <img src="assets/tarantino.jpg" alt="Tarantino Expo" class="card-img">
+                                <img src="assets/elysium.webp" alt="Elysium Scapes" class="card-img">
                             </div>
-                            <h3>Tarantino Expo</h3>
-                            <p>UX/UI & App Design</p>
+                            <h3>Elysium Scapes</h3>
+                            <p>Advanced UI & Prototyping</p>
                         </div>
                         
                         <div class="project-card" onclick="toggleProjectDetail('bakeneko')">
@@ -92,68 +93,98 @@
 
                 <div id="project-details-container" class="project-details-wrapper">
                     
-                    <div id="detail-tarantino" class="project-case-study">
+                    <div id="detail-elysium" class="project-case-study">
                         <div class="case-sidebar">
                             <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/tarantino.jpg" alt="Tarantino Expo" class="card-img">
+                                <img src="assets/elysium.webp" alt="Elysium Scapes" class="card-img">
                             </div>
                         </div>
                         <div class="case-content">
-                            <h3>Tarantino Expo</h3>
-                            <span class="case-tags">UX Research • User Flow • UI Design • Figma</span>
+                            <h3>Elysium Scapes</h3>
+                            <span class="case-tags">Advanced UI • Prototyping • Component Systems • Figma</span>
                             
                             <div class="case-body">
-                                <p class="intro-text"><strong>El Reto:</strong> Diseñar la interfaz táctil para una exposición inmersiva de Quentin Tarantino, asegurando una navegación intuitiva en entornos con poca luz.</p>
+                                <p class="intro-text"><strong>El Reto:</strong> Diseñar la interfaz y la capa de micro-interacciones para una plataforma web orientada al sector del lujo (Elysium Scapes). El objetivo principal era transmitir exclusividad puramente a través del comportamiento dinámico de la web, utilizando técnicas avanzadas de prototipado.</p>
                                 
                                 <div class="zig-zag-row">
                                     <div class="zig-zag-text">
-                                        <h4>1. Arquitectura & Wireframing</h4>
-                                        <p>Mapeo del viaje del usuario (User Journey) para reducir la fricción. Creación de wireframes de baja fidelidad enfocados en el contraste y zonas táctiles (hitboxes) amplias.</p>
+                                        <h4>1. User Flow & Dirección de Arte</h4>
+                                        <p>Mapeo exhaustivo del viaje del usuario (User Journey) para una plataforma de reservas premium. Definición de una dirección de arte sofisticada (Dark Mode) con tipografía serif elegante, priorizando que la fotografía de los destinos (Santorini, Bali) guíe la experiencia de navegación.</p>
                                     </div>
-                                    <div class="zig-zag-img"><img src="assets/tarantino-wireframes.jpg" alt="Wireframes"></div>
+                                    <div class="zig-zag-img"><img src="assets/elysium-ui.webp" alt="User Flow y Dirección de Arte"></div>
                                 </div>
 
                                 <div class="zig-zag-row reverse">
                                     <div class="zig-zag-text">
-                                        <h4>2. Sistema de Diseño UI</h4>
-                                        <p>Desarrollo de un UI Kit brutalista y cinematográfico. Tipografías bold y paleta de alto contraste inspirada en la filmografía del director, garantizando la accesibilidad visual.</p>
+                                        <h4>2. Smart Animate & Componentes Interactivos</h4>
+                                        <p>Construcción de un sistema modular de componentes en Figma utilizando variantes complejas. Configuración de transiciones de alta fidelidad mediante <i>Smart Animate</i> (curvas bezier personalizadas y efectos de muelle/spring) para previsualizar con precisión matemática las físicas e interacciones antes de pasar a desarrollo.</p>
                                     </div>
-                                    <div class="zig-zag-img"><img src="assets/tarantino-ui.jpg" alt="UI Design"></div>
+                                    <div class="zig-zag-img"><img src="assets/elysium-figma.webp" alt="Lógica de Prototipado Avanzado"></div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="live-preview-section">
+                            <h4>Prototipo Interactivo</h4>
+                            <p>Interactúa con la interfaz real y experimenta las transiciones directamente desde Figma:</p>
+                            
+                            <div class="iframe-window mobile-frame">
+                                <div class="mobile-notch"></div>
+                                
+                                <iframe src="https://embed.figma.com/proto/cRYtWtu55kdnKOoiLWINfh/Untitled?node-id=430-3633&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=430%3A3633&embed-host=share&hide-ui=1&scaling=scale-down-width" allowfullscreen title="Elysium Scapes Figma Prototype"></iframe>
+                            </div>
+
+                            <a href="https://www.figma.com/proto/cRYtWtu55kdnKOoiLWINfh/Untitled?node-id=430-3633&p=f&t=HijyIXl6uMkuyVZU-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=430%3A3633" target="_blank" class="external-link-btn">
+                                Ver prototipo completo en Figma ↗
+                            </a>
                         </div>
                     </div>
 
                     <div id="detail-bakeneko" class="project-case-study">
-            
                         <div class="case-sidebar">
                             <div class="project-image-placeholder vertical-img case-main-img">
                                 <img src="assets/bakeneko.jpg" alt="Bakeneko Bakery" class="card-img">
                             </div>
                         </div>
-
                         <div class="case-content">
                             <h3>Bakeneko Bakery</h3>
-                            <span class="case-tags">HTML5 Semántico • CSS3 (Grid/Flexbox) • JS ES6</span>
+                            <span class="case-tags">E-Commerce Premium • Product Strategy • Frontend (GSAP/JS) • Phygital</span>
                             
                             <div class="case-body">
-                                <p class="intro-text"><strong>El Reto:</strong> Desarrollar desde cero el front-end para una pastelería artesanal japonesa, priorizando el rendimiento, el SEO y una adaptación móvil impecable.</p>
+                                <p class="intro-text"><strong>El Reto:</strong> Crear una experiencia de e-commerce que no parezca un supermercado, sino una marca de lujo silencioso de consumo ocasional. El concepto fusiona la mitología japonesa (Yokai), la repostería artesanal (Wagashi) y un maridaje premium de cafés de especialidad y vinos.</p>
                                 
                                 <div class="zig-zag-row">
                                     <div class="zig-zag-text">
-                                        <h4>1. Estructura & Semántica</h4>
-                                        <p>Maquetación con código limpio y modular (Metodología BEM). Uso estricto de etiquetas HTML5 semánticas para mejorar la accesibilidad y el posicionamiento en buscadores.</p>
+                                        <h4>1. Estrategia de Negocio & Posicionamiento</h4>
+                                        <p>Tras detectar en tests de usuario que el formato clásico de tienda daba una falsa percepción de "consumo diario", se pivotó el modelo hacia la exclusividad mediante "Drops" (lanzamientos limitados a través del Grimorio). Integración de <i>Co-Branding</i> (Syra Coffee, Bodegas Kizuna) para elevar el ticket medio mediante venta cruzada.</p>
                                     </div>
-                                    <div class="zig-zag-img"><img src="assets/bakeneko-code.jpg" alt="Código"></div>
+                                    <div class="zig-zag-img"><img src="assets/bakeneko-estrategia.jpg" alt="Estrategia de Negocio"></div>
                                 </div>
 
                                 <div class="zig-zag-row reverse">
                                     <div class="zig-zag-text">
-                                        <h4>2. Responsive & Micro-interacciones</h4>
-                                        <p>Despliegue fluido mediante CSS Grid. Programación en Vanilla JavaScript de animaciones de carga e interacciones al vuelo sin depender de librerías pesadas.</p>
+                                        <h4>2. Rompiendo el E-commerce Tradicional</h4>
+                                        <p>Diseño <i>Mobile-First</i> con una cesta de compra oculta asíncrona mediante modales, garantizando una compra sin fricción. Desarrollo de un ecosistema multi-idioma (ES, EN, JP) en tiempo real que adapta automáticamente las variantes tipográficas del logotipo y el historial conversacional.</p>
                                     </div>
-                                    <div class="zig-zag-img"><img src="assets/bakeneko-responsive.jpg" alt="Móvil"></div>
+                                    <div class="zig-zag-img"><img src="assets/bakeneko-ux.jpg" alt="UX E-commerce sin fricción"></div>
                                 </div>
+
+                                <div class="zig-zag-row">
+                                    <div class="zig-zag-text">
+                                        <h4>3. Micro-interacciones & "Wow" Factor</h4>
+                                        <p>Programación de animaciones avanzadas (GSAP & Lenis) para un <i>scroll</i> fluido, transiciones en tinta china y cartas Yokai en 3D que responden al movimiento. Creación de un cursor personalizado Neo-Ukiyo-e adaptable al contexto interactivo de cada componente.</p>
+                                    </div>
+                                    <div class="zig-zag-img"><img src="assets/bakeneko-animacion.gif" alt="Animaciones GSAP"></div>
+                                </div>
+
+                                <div class="zig-zag-row reverse">
+                                    <div class="zig-zag-text">
+                                        <h4>4. El Puente Phygital & El Oráculo</h4>
+                                        <p>Sistema de retención de usuarios mediante cartas coleccionables físicas con códigos rúnicos que desbloquean animaciones 3D en el navegador. Asistencia mediante "El Oráculo", un chatbot narrativo capaz de interrumpir la compra para ofrecer tutoriales interactivos en pantalla sobre productos complejos.</p>
+                                    </div>
+                                    <div class="zig-zag-img"><img src="assets/bakeneko-phygital.jpg" alt="Sistema Phygital y Chatbot"></div>
+                                </div>
+
                             </div>
                         </div> 
                         
@@ -174,7 +205,9 @@
                                 Ver proyecto en pantalla completa ↗
                             </a>
                         </div>
-                    </div> <div id="detail-libro" class="project-case-study">
+                    </div> 
+
+                    <div id="detail-libro" class="project-case-study">
                         <div class="case-sidebar">
                             <div class="project-image-placeholder vertical-img case-main-img">
                                 <img src="assets/libro.jpg" alt="Natural Sciences" class="card-img">
@@ -245,7 +278,7 @@
         </nav>
 
         <nav class="project-sub-menu">
-            <a id="sublink-tarantino" class="sub-link" onclick="toggleProjectDetail('tarantino')">Tarantino</a>
+            <a id="sublink-elysium" class="sub-link" onclick="toggleProjectDetail('elysium')">Elysium</a>
             <a id="sublink-bakeneko" class="sub-link" onclick="toggleProjectDetail('bakeneko')">Bakeneko</a>
             <a id="sublink-libro" class="sub-link" onclick="toggleProjectDetail('libro')">Ciencias</a>
         </nav>
