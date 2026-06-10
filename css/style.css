@@ -939,85 +939,112 @@ body {
 }
 
 /* =========================================================
-   📱 RESPONSIVE DESIGN CORREGIDO (MÓVILES Y TABLETS)
+   📱 RESPONSIVE DESIGN TOTALMENTE BLINDADO (SIN LAG NI DESBORDAMIENTOS)
    ========================================================= */
 @media (max-width: 768px) {
-    
-    .main-menu {
-        width: 100%;
-        align-items: center;
+    html, body {
+        height: 100% !important;
+        width: 100vw !important;
+        overflow: hidden !important;
+        position: fixed;
     }
 
-    #portfolio-container.layout-split .main-menu {
-        left: 50% !important; 
-        top: 8vh !important;
-        transform: translateX(-50%) !important;
-        flex-direction: row !important; 
-        gap: 1.2rem !important;
+    #portfolio-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .main-menu {
+        width: 100% !important;
+        left: 0 !important;
+        transform: none !important;
         align-items: center !important;
     }
 
-    .soft-glitch-link {
-        font-size: 1.1rem !important;
-        letter-spacing: 0 !important;
-        text-align: center;
+    #portfolio-container.layout-split .main-menu,
+    #portfolio-container.case-study-active .main-menu {
+        left: 0 !important; 
+        top: 2rem !important; 
+        transform: none !important;
+        flex-direction: row !important; 
+        justify-content: center !important; 
+        gap: 1.5rem !important;
+        width: 100% !important;
     }
 
-    .content-area,
+    .soft-glitch-link {
+        font-size: 1.1rem !important; 
+        letter-spacing: 0 !important;
+        text-align: center !important;
+    }
+
+    #portfolio-container.case-study-active .project-sub-menu {
+        left: 0 !important;
+        top: 5.5rem !important; 
+        width: 100% !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important; 
+        gap: 1.2rem !important;
+        padding: 0 1rem; 
+    }
+
+    .sub-link {
+        font-size: 0.85rem !important;
+        padding: 0 0.2rem !important;
+    }
+
+    .content-area {
+        left: 5% !important;
+        width: 90% !important; 
+        top: 16vh !important; 
+        transform: none !important;
+        height: calc(100% - 20vh) !important; 
+    }
+
     #portfolio-container.case-study-active .content-area {
         left: 5% !important;
         width: 90% !important;
-        top: 16vh !important; 
+        top: 9.5rem !important; 
         transform: none !important;
+        height: calc(100% - 11rem) !important; 
     }
 
     .content-block {
-        max-height: 80vh;
-        overflow-y: auto; 
-        padding-bottom: 6rem; 
+        max-height: 100%; 
+        overflow-y: auto;
+        padding-bottom: 4rem; 
         scrollbar-width: none; 
     }
 
     .about-grid {
         grid-template-columns: 1fr; 
-        gap: 2rem;
-        margin-top: 0;
+        gap: 2.5rem;
+        margin-top: 1rem;
     }
 
     .image-frame {
-        max-width: 220px;
+        max-width: 200px;
         margin: 0 auto; 
-    }
-
-    #portfolio-container.case-study-active .main-menu {
-        top: 4vh !important; 
-    }
-
-    #portfolio-container.case-study-active .project-sub-menu {
-        top: 10vh !important;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    #portfolio-container.case-study-active .content-area {
-        top: 18vh !important;
     }
 
     .projects-grid {
         flex-direction: column;
-        gap: 2rem;
-        padding-bottom: 4rem;
+        gap: 2.5rem;
+        padding-bottom: 5rem;
     }
 
     .project-case-study {
-        max-height: 75vh;
-        padding-right: 0; 
+        max-height: 100% !important;
+        padding-right: 0.2rem;
     }
 
     .case-header-block h3 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
     }
 
     .case-intro-row, 
@@ -1025,7 +1052,7 @@ body {
     .zig-zag-row.reverse {
         flex-direction: column !important; 
         gap: 1.5rem;
-        margin-bottom: 3rem;
+        margin-bottom: 3.5rem;
     }
 
     .case-intro-row .case-main-img, 
@@ -1039,17 +1066,17 @@ body {
     }
 
     .gallery-stack {
-        gap: 0.3rem; 
+        gap: 0.4rem; 
     }
 
     .stacked-card {
-        width: 55px;
-        height: 55px;
-        border-width: 1px;
+        width: 58px; 
+        height: 58px;
+        border-width: 1px; 
     }
 
     .stacked-card:hover {
-        transform: translateY(-8px) scale(1.5) rotate(0deg) !important;
+        transform: translateY(-6px) scale(1.15) rotate(0deg) !important;
     }
 
     .iframe-window {
@@ -1057,7 +1084,7 @@ body {
     }
 
     .iframe-window.mobile-frame {
-        max-width: 260px;
+        max-width: 240px;
         aspect-ratio: 9/19;
     }
 }
