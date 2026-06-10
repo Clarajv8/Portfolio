@@ -1033,6 +1033,7 @@ body {
         margin: 0 auto; 
     }
 
+    /* 🌟 INVERTIR EL EFECTO DE COLOR EN PANTALLAS TÁCTILES */
     .profile-photo {
         filter: grayscale(0%) !important; 
     }
